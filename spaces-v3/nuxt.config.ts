@@ -5,6 +5,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  runtimeConfig: {
+    API_URL: "https://api.artic.edu/api/v1/artworks",
+    public: {
+      API_URL_public: "https://api.artic.edu/api/v1/artworks",
+    },
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },

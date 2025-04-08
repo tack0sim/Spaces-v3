@@ -8,7 +8,7 @@ const query = groq`*[_type == "post"]{
   "body": body[].children[].text
 }`;
 
-const { data: posts } = await useSanityQuery(query);
+const { data: posts } = await useSanityQuery<Posts>(query);
 </script>
 
 <template>
