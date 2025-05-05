@@ -15,9 +15,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/tailwind.css"],
   image: {
-    domains: ["http://www.artic.edu"],
+    domains: ["www.artic.edu", "cdn.sanity.io"],
+    sanity: {
+      projectId: "r9cp4rz9",
+    },
   },
 
   modules: [

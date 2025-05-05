@@ -21,6 +21,7 @@ function refetch(currentPage: number) {
     class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] items-center justify-items-center w-[min(90rem,calc(100%_-_30px))] min-h-[100svh] gap-16"
   >
     <section v-for="post in posts?.data" :key="post.id">
+      <!-- Get imageURL -->
       <a
         :href="`${posts?.config.iiif_url}/${post.image_id}/full/843,/0/default.jpg`"
       >

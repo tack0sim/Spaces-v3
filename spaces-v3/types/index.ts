@@ -29,5 +29,6 @@ declare global {
     title: string;
     author: string;
     body: string[];
+    mainImage: string;
   }
 }
