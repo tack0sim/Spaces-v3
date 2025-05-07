@@ -4,13 +4,14 @@ import groq from "groq";
 
 const query = groq`*[_type == "post"]{
     _id,
+    slug,
   title,
   "author": author->name,
   body,
   "mainImage": mainImage.asset->url
 }`;
 
-const { data: posts } = await useSanityQuery<Posts>(query);
+const { data: posts } = await useSanityQuery<Posts[]>(query);
 </script>
 
 <template>

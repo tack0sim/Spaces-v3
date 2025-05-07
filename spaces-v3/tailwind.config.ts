@@ -9,7 +9,19 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundOpacity: {
+        "10": "0.1",
+        "20": "0.2",
+        "50": "0.5",
+        "95": "0.95",
+      },
+      opacity: {
+        "15": "0.15",
+        "35": "0.35",
+        "65": "0.65",
+      },
+    },
   },
   darkMode: "class", // or 'media'
   plugins: [],

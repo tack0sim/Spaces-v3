@@ -35,6 +35,12 @@ export default defineNuxtConfig({
     "@nuxtjs/sanity",
   ],
 
+  icon: {
+    serverBundle: {
+      collections: ["mdi"],
+    },
+  },
+
   sanity: {
     projectId: "r9cp4rz9",
     dataset: "production",

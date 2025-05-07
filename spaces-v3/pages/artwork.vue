@@ -18,7 +18,7 @@ function refetch(currentPage: number) {
 
 <template>
   <main
-    class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] items-center justify-items-center w-[min(90rem,calc(100%_-_30px))] min-h-[100svh] gap-16"
+    class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] items-center justify-items-center w-[min(90rem,calc(100%_-_30px))] min-h-[100svh] gap-16 gap-y-16"
   >
     <section v-for="post in posts?.data" :key="post.id">
       <!-- Get imageURL -->

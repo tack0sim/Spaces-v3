@@ -1,3 +1,5 @@
+import type { PortableTextBlockComponent } from "@portabletext/vue";
+
 declare global {
   interface ArtworkData {
     id: number;
@@ -26,9 +28,19 @@ declare global {
   // Sanity types
   interface Posts {
     _id: string;
+    slug: string;
     title: string;
     author: string;
-    body: string[];
+    body: PortableTextBlockComponent;
+    mainImage: string;
+  }
+
+  interface Gallery {
+    _id: string;
+    title: string;
+    date: string;
+    slug: string;
+    categories: string[];
     mainImage: string;
   }
 }
