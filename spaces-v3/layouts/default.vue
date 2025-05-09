@@ -1,8 +1,4 @@
-<script setup lang="ts">
-definePageMeta({
-  title: "Spaces",
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>

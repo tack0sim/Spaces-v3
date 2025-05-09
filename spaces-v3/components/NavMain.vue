@@ -17,12 +17,12 @@ const isDark = computed({
       <div>
         <!-- <Icon icon="mdi-light:camera" width="24" height="24" /> -->
       </div>
-      <div class="flex content-start justify-evenly">
+      <ul class="flex content-start justify-evenly">
         <NuxtLink to="/" class="text-2xl text-white">Home</NuxtLink>
         <NuxtLink to="/gallery" class="text-2xl text-white">Gallery</NuxtLink>
         <NuxtLink to="/blogs" class="text-2xl text-white">Blog</NuxtLink>
         <NuxtLink to="/artwork" class="text-2xl text-white">Artworks</NuxtLink>
-      </div>
+      </ul>
       <div>
         <ClientOnly v-if="!colorMode?.forced">
           <UButton

@@ -1,4 +1,4 @@
-import type { PortableTextBlockComponent } from "@portabletext/vue";
+import type { PortableTextBlock } from "@portabletext/types";
 
 declare global {
   interface ArtworkData {
@@ -31,7 +31,7 @@ declare global {
     slug: string;
     title: string;
     author: string;
-    body: PortableTextBlockComponent;
+    body: PortableTextBlock[];
     mainImage: string;
   }
 
