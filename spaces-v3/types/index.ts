@@ -32,6 +32,7 @@ declare global {
     title: string;
     author: string;
     body: PortableTextBlock[];
+    blurb: PortableTextBlock[];
     mainImage: string;
   }
 

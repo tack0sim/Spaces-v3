@@ -50,6 +50,12 @@ export default defineType({
       type: 'array',
       of: [{type: 'block'}],
     }),
+    defineField({
+      name: 'blurb',
+      title: 'Blurb',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
   ],
 
   preview: {
