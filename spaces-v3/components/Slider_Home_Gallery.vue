@@ -9,7 +9,9 @@ defineProps<{
 const query = groq`*[_type == "gallery"]{
     _id,
   "slug": slug.current,
-  "mainImage": mainImage.asset->url
+  "mainImage": mainImage.asset->url,
+  "lqip": mainImage.asset->metadata.lqip,
+  "blurhash": mainImage.asset->metadata.blurHash
 }`;
 
 const { data: images } = await useSanityQuery<Gallery[]>(query);
@@ -17,7 +19,7 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
 
 <template>
   <UCarousel
-    v-show="$viewport.isLessOrEquals('mobileWide')"
+    v-if="$viewport.isLessOrEquals('mobileWide')"
     arrows
     dots
     loop
@@ -25,39 +27,43 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
     :next-icon="nextIcon"
     :items="images"
     :ui="{ item: 'basis-1/2' }"
-    class="w-full md:max-w-3xl lg:max-w-5xl mx-auto mb-8"
+    class="w-full max-w-xl mx-auto mb-12"
   >
     <template #default="{ item }">
       <NuxtImg
         :src="item?.mainImage"
         format="webp"
         densities="x1"
-        width="420"
-        height="420"
-        class="rounded-lg mx-auto"
+        width="300"
+        height="300"
+        loading="lazy"
+        :placeholder="item?.lqip"
+        class="w-[250px] h-[250px] object-cover rounded-lg mx-auto"
       />
     </template>
   </UCarousel>
   <!-- tablet and desktop gallery carousel -->
   <UCarousel
-    v-show="$viewport.isGreaterThan('mobileWide')"
+    v-if="$viewport.isGreaterThan('mobileWide')"
     arrows
-    dots
     loop
+    dots
     :prev-icon="prevIcon"
     :next-icon="nextIcon"
     :items="images"
     :ui="{ item: 'basis-1/3' }"
-    class="w-full md:max-w-3xl lg:max-w-5xl mx-auto"
+    class="w-full sm:max-w-3xl mx-auto mb-12"
   >
     <template #default="{ item }">
       <NuxtImg
         :src="item?.mainImage"
+        width="400"
+        height="450"
         format="webp"
         densities="x1"
-        width="420"
-        height="420"
-        class="rounded-lg mx-auto"
+        loading="lazy"
+        :placeholder="item?.lqip"
+        class="rounded-lg object-cover mx-auto"
       />
     </template>
   </UCarousel>

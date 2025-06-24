@@ -4,5 +4,6 @@
   <div>
     <NavMain />
     <slot />
+    <FooterMain />
   </div>
 </template>

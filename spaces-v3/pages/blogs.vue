@@ -16,20 +16,25 @@ const { data: posts } = await useSanityQuery<Posts[]>(query);
 
 <template>
   <main>
-    <section v-for="post in posts" :key="post._id">
+    <section
+      v-for="post in posts"
+      :key="post._id"
+      class="prose max-w-[75vw] mx-auto mb-12 dark:prose-invert prose-a:no-underline"
+    >
       <NuxtLink :to="`/posts/${post.slug}`">
-        <h1 class="font-bold text-lg italic">Title: {{ post.title }}</h1>
+        <h2 class="mt-0 mb-0">{{ post.title }}</h2>
       </NuxtLink>
-      <p class="font-bold text-lg italic">Author: {{ post.author }}</p>
-      <p class="font-bold text-lg italic">Post:</p>
-      <NuxtImg
-        v-show="post?.mainImage"
-        :src="post?.mainImage"
-        sizes="sm:100vw md:300px lg:500px"
-        loading="lazy"
-        densities="x1"
-        format="webp"
-      />
+      <!-- <p class="text-xl italic mt-0 mb-0">{{ post.author }}</p> -->
+      <NuxtLink :to="`/posts/${post.slug}`">
+        <NuxtImg
+          v-show="post?.mainImage"
+          :src="post?.mainImage"
+          sizes="sm:100vw md:50vw"
+          loading="lazy"
+          densities="x1"
+          format="webp"
+        />
+      </NuxtLink>
       <PortableText :value="post.body" />
     </section>
   </main>

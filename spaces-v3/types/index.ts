@@ -43,5 +43,7 @@ declare global {
     slug: string;
     categories: string[];
     mainImage: string;
+    lqip: string;
+    blurhash: string;
   }
 }

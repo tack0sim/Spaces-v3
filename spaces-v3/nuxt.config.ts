@@ -1,7 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import tailwindcss from "@tailwindcss/vite";
-
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
@@ -12,9 +10,6 @@ export default defineNuxtConfig({
     },
   },
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
   css: ["~/assets/css/tailwind.css"],
   image: {
     domains: ["www.artic.edu", "cdn.sanity.io"],
@@ -34,6 +29,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils",
     "@nuxtjs/sanity",
     "nuxt-viewport",
+    "@nuxtjs/tailwindcss",
   ],
 
   viewport: {

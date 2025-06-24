@@ -27,7 +27,7 @@ watchEffect(() => {
     :total="total"
     :sibling-count="1"
     active-color="neutral"
-    class="flex justify-center w-screen mx-auto"
+    class="flex justify-center w-full mx-auto mt-8"
     @update:page="emit('update:page', currentPage)"
   />
 </template>

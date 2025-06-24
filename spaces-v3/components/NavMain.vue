@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+// import { Icon } from "@iconify/vue";
 import type { DropdownMenuItem, NavigationMenuItem } from "@nuxt/ui";
 
 const items = ref<NavigationMenuItem[][]>([
   [
-    {
-      label: "Home",
-      icon: "i-lucide-home",
-      to: "/",
-    },
     {
       label: "Gallery",
       icon: "i-lucide-image",
@@ -29,12 +24,6 @@ const items = ref<NavigationMenuItem[][]>([
 
 const hamburgerItems = ref<DropdownMenuItem[][]>([
   [
-    {
-      link: "Home",
-      icon: "i-lucide-home",
-      to: "/",
-      label: "Home",
-    },
     {
       link: "Gallery",
       icon: "i-lucide-image",
@@ -75,7 +64,7 @@ const isDark = computed({
 </script>
 
 <template>
-  <nav class="w-full bg-white border-b flex-[1_0_0] py-4 px-6 gap-4 mb-4">
+  <nav class="w-full bg-white py-4 px-6 gap-4 mb-4">
     <div class="max-w-[1440px] mx-auto flex items-center justify-between">
       <!-- Icon, title, menu -->
       <div class="flex items-center gap-4">
@@ -85,7 +74,7 @@ const isDark = computed({
         </NuxtLink>
         <!-- Desktop menu -->
         <UNavigationMenu
-          v-if="viewport.isGreaterOrEquals('mobileWide')"
+          v-if="viewport.isGreaterOrEquals('tablet')"
           color="neutral"
           :items="items"
           class="w-full"
@@ -93,8 +82,10 @@ const isDark = computed({
       </div>
       <!-- Search bar and dark mode toggle element -->
       <div class="flex items-center gap-4">
-        <div
-          v-show="viewport.isGreaterOrEquals('tablet')"
+        <!-- search bar functionality paused at the moment -->
+        <!-- will come back to it later -->
+        <!-- <div
+          v-if="viewport.isGreaterOrEquals('tablet')"
           class="md:flex items-center bg-gray-100 rounded-lg px-3 py-1 gap-2"
         >
           <Icon
@@ -103,14 +94,13 @@ const isDark = computed({
             height="16"
             class="text-gray-500"
           />
-          <input type="text" placeholder="Search..." class="text-gray-500" />
-        </div>
-        <!--  -->
+          <UInput color="primary" variant="soft" placeholder="Search..." />
+        </div> -->
         <ClientOnly v-if="!colorMode?.forced">
           <UButton
             :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
             color="neutral"
-            variant="ghost"
+            variant="soft"
             class="rounded-full"
             @click="isDark = !isDark"
           />
@@ -128,7 +118,7 @@ const isDark = computed({
           }"
         >
           <UButton
-            v-show="viewport.isLessOrEquals('mobileWide')"
+            v-if="viewport.isLessThan('tablet')"
             icon="i-lucide-menu"
             color="neutral"
             variant="soft"

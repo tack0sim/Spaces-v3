@@ -10,7 +10,8 @@ const query = groq`
   date,
   "slug": slug.current,
   "categories": categories[]->title,
-  "mainImage": mainImage.asset->url
+  "mainImage": mainImage.asset->url,
+  "lqip": mainImage.asset->metadata.lqip
   }`;
 
 const { data: images } = useSanityQuery<Gallery>(query, {
@@ -19,18 +20,20 @@ const { data: images } = useSanityQuery<Gallery>(query, {
 </script>
 
 <template>
-  <div>
-    <Transition>
+  <div class="w-full max-w-[50vw] mx-auto">
+    <NuxtLink :to="images.mainImage">
       <NuxtImg
-        :src="images?.mainImage"
-        sizes="sm:100vw md:400px"
-        densities="x1"
+        :src="images.mainImage"
+        sizes="sm:100vw md:75vw"
+        densities="x1 x2"
         format="webp"
         loading="lazy"
+        :placeholder="images.lqip"
+        class="w-full h-auto object-cover"
       />
-    </Transition>
-    <p>Title: {{ images?.title }}</p>
-    <p>Date: {{ images?.date }}</p>
-    <p>Categories: {{ images?.categories.join(", ") }}</p>
+    </NuxtLink>
+    <p>Title: {{ images.title }}</p>
+    <p>Date: {{ images.date }}</p>
+    <p>Categories: {{ images.categories?.join(", ") }}</p>
   </div>
 </template>

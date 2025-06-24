@@ -49,5 +49,10 @@ export default defineType({
       title: 'Published at',
       type: 'datetime',
     }),
+    defineField({
+      name: 'archivedAs',
+      title: 'Archived as',
+      type: 'string',
+    }),
   ],
 })

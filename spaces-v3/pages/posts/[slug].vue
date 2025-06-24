@@ -11,7 +11,9 @@ const query = groq`
     title,
     "author": author->name,
     body,
-    "mainImage": mainImage.asset->url
+    "mainImage": mainImage.asset->url,
+    "lqip": mainImage.asset->metadata.lqip,
+    "blurhash": mainImage.asset->metadata.blurHash
     }`;
 
 const { data: post } = await useSanityQuery<Posts>(query, {
@@ -21,9 +23,21 @@ const { data: post } = await useSanityQuery<Posts>(query, {
 
 <template>
   <div>
-    <section>
-      <h3 class="font-bold">{{ post?.title }}</h3>
-      <PortableText :value="post?.body" />
+    <section class="prose max-w-[75vw] mx-auto dark:prose-invert">
+      <h2>{{ post.title }}</h2>
+      <NuxtLink v-if="post.mainImage" :to="post?.mainImage">
+        <NuxtImg
+          v-if="post.mainImage"
+          :src="post.mainImage"
+          size="sm:100vw md:75vw"
+          densities="x1 x2"
+          format="webp"
+          loading="lazy"
+          :placeholder="post.lqip"
+          class="h-auto w-full object-cover"
+        />
+      </NuxtLink>
+      <PortableText :value="post.body" />
     </section>
   </div>
 </template>
