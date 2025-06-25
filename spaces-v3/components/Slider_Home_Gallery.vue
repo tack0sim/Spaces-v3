@@ -18,6 +18,12 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
 </script>
 
 <template>
+  <div
+    v-if="$viewport.isLessOrEquals('mobileWide')"
+    class="prose dark:prose-invert"
+  >
+    <h2 class="mb-4 ml-2">Featured works</h2>
+  </div>
   <UCarousel
     v-if="$viewport.isLessOrEquals('mobileWide')"
     arrows
@@ -31,18 +37,24 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
   >
     <template #default="{ item }">
       <NuxtImg
-        :src="item?.mainImage"
+        :src="(item as Gallery).mainImage"
         format="webp"
         densities="x1"
         width="300"
         height="300"
         loading="lazy"
-        :placeholder="item?.lqip"
+        :placeholder="(item as Gallery).lqip"
         class="w-[250px] h-[250px] object-cover rounded-lg mx-auto"
       />
     </template>
   </UCarousel>
   <!-- tablet and desktop gallery carousel -->
+  <div
+    v-if="$viewport.isGreaterThan('mobileWide')"
+    class="prose dark:prose-invert"
+  >
+    <h2 class="mb-4 ml-2">Featured works</h2>
+  </div>
   <UCarousel
     v-if="$viewport.isGreaterThan('mobileWide')"
     arrows
@@ -56,13 +68,13 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
   >
     <template #default="{ item }">
       <NuxtImg
-        :src="item?.mainImage"
+        :src="(item as Gallery).mainImage"
         width="400"
         height="450"
         format="webp"
         densities="x1"
         loading="lazy"
-        :placeholder="item?.lqip"
+        :placeholder="(item as Gallery).lqip"
         class="rounded-lg object-cover mx-auto"
       />
     </template>

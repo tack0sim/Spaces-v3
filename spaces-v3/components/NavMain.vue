@@ -14,10 +14,15 @@ const items = ref<NavigationMenuItem[][]>([
       icon: "i-lucide-text",
       to: "/blogs",
     },
+    // {
+    //   label: "Artworks",
+    //   icon: "i-lucide-brush",
+    //   to: "/artwork",
+    // },
     {
-      label: "Artworks",
-      icon: "i-lucide-brush",
-      to: "/artwork",
+      label: "About",
+      icon: "i-lucide-user",
+      to: "/about",
     },
   ],
 ]);
@@ -36,11 +41,17 @@ const hamburgerItems = ref<DropdownMenuItem[][]>([
       to: "/blogs",
       label: "Blog",
     },
+    // {
+    //   link: "Artworks",
+    //   icon: "i-lucide-brush",
+    //   to: "/artwork",
+    //   label: "Artworks",
+    // },
     {
-      link: "Artworks",
-      icon: "i-lucide-brush",
-      to: "/artwork",
-      label: "Artworks",
+      link: "About",
+      icon: "i-lucide-user",
+      to: "/about",
+      label: "About",
     },
   ],
 ]);
@@ -107,6 +118,7 @@ const isDark = computed({
         </ClientOnly>
         <!-- Mobile menu -->
         <UDropdownMenu
+          v-if="$viewport.isLessThan('tablet')"
           :items="hamburgerItems"
           :ui="{
             content: 'w-72',

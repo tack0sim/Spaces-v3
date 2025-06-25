@@ -35,6 +35,7 @@
         </p>
         <UButton
           label="tell me more"
+          to="/about"
           color="neutral"
           variant="outline"
           size="md"
