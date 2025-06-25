@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PortableText } from "@portabletext/vue";
 
-const query = groq`*[_type == "author"][1]{
+const query = groq`*[_type == "author"][0]{
   name,
   "image": image.asset->url
 }`;
