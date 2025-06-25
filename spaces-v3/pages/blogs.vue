@@ -21,8 +21,10 @@ const { data: posts } = await useSanityQuery<Posts[]>(query);
       :key="post._id"
       class="prose max-w-[75vw] mx-auto mb-12 dark:prose-invert prose-a:no-underline"
     >
-      <NuxtLink :to="`/posts/${post.slug}`">
-        <h2 class="mt-0 mb-0">{{ post.title }}</h2>
+      <NuxtLink :to="`/posts/${post.slug}`" class="inline-block">
+        <h2 class="mt-0 mb-0">
+          {{ post.title }}
+        </h2>
       </NuxtLink>
       <!-- <p class="text-xl italic mt-0 mb-0">{{ post.author }}</p> -->
       <NuxtLink :to="`/posts/${post.slug}`">
@@ -33,6 +35,7 @@ const { data: posts } = await useSanityQuery<Posts[]>(query);
           loading="lazy"
           densities="x1"
           format="webp"
+          class="w-screen h-[200px] min-md: object-cover rounded-r-2xl"
         />
       </NuxtLink>
       <PortableText :value="post.body" />

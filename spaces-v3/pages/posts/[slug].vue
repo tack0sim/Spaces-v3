@@ -24,8 +24,8 @@ const { data: post } = await useSanityQuery<Posts>(query, {
 <template>
   <div>
     <section class="prose max-w-[75vw] mx-auto dark:prose-invert">
-      <h2>{{ post.title }}</h2>
-      <NuxtLink v-if="post.mainImage" :to="post?.mainImage">
+      <h2>{{ post?.title }}</h2>
+      <NuxtLink v-if="post?.mainImage" :to="post?.mainImage">
         <NuxtImg
           v-if="post.mainImage"
           :src="post.mainImage"
@@ -34,7 +34,7 @@ const { data: post } = await useSanityQuery<Posts>(query, {
           format="webp"
           loading="lazy"
           :placeholder="post.lqip"
-          class="h-auto w-full object-cover"
+          class="h-auto md:h-[50vh] w-full object-cover"
         />
       </NuxtLink>
       <PortableText :value="post.body" />

@@ -21,19 +21,19 @@ const { data: images } = useSanityQuery<Gallery>(query, {
 
 <template>
   <div class="w-full max-w-[50vw] mx-auto">
-    <NuxtLink :to="images.mainImage">
+    <NuxtLink :to="images?.mainImage">
       <NuxtImg
-        :src="images.mainImage"
+        :src="images?.mainImage"
         sizes="sm:100vw md:75vw"
         densities="x1 x2"
         format="webp"
         loading="lazy"
-        :placeholder="images.lqip"
+        :placeholder="images?.lqip"
         class="w-full h-auto object-cover"
       />
     </NuxtLink>
-    <p>Title: {{ images.title }}</p>
-    <p>Date: {{ images.date }}</p>
-    <p>Categories: {{ images.categories?.join(", ") }}</p>
+    <p>Title: {{ images?.title }}</p>
+    <p>Date: {{ images?.date }}</p>
+    <p>Categories: {{ images?.categories?.join(", ") }}</p>
   </div>
 </template>

@@ -34,6 +34,7 @@ declare global {
     body: PortableTextBlock[];
     blurb: PortableTextBlock[];
     mainImage: string;
+    lqip: string;
   }
 
   interface Gallery {
@@ -45,5 +46,11 @@ declare global {
     mainImage: string;
     lqip: string;
     blurhash: string;
+  }
+
+  interface Author {
+    _id: string;
+    name: string;
+    image: string;
   }
 }
