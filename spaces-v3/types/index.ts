@@ -53,4 +53,8 @@ declare global {
     name: string;
     image: string;
   }
+
+  interface About {
+    body: PortableTextBlock[];
+  }
 }

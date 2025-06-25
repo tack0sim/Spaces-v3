@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { PortableText } from "@portabletext/vue";
+
 const query = groq`*[_type == "author"][1]{
   name,
   "image": image.asset->url
 }`;
 
-const { data } = await useSanityQuery<Author>(query);
+const queryAbout = groq`*[_type == "about"][0]{
+  body
+}`;
+
+const { data: item } = await useSanityQuery<Author>(query);
+const { data: post } = await useSanityQuery<About>(queryAbout);
 </script>
 
 <template>
@@ -18,7 +25,7 @@ const { data } = await useSanityQuery<Author>(query);
       <div v-if="$viewport.isLessThan('tablet')" class="relative w-full">
         <NuxtImg
           v-if="$viewport.isLessThan('tablet')"
-          :src="data?.image"
+          :src="item?.image"
           sizes="sm:100vw"
           format="webp"
           densities="x1"
@@ -28,7 +35,7 @@ const { data } = await useSanityQuery<Author>(query);
       <div class="relative w-full">
         <NuxtImg
           v-if="$viewport.isGreaterOrEquals('tablet')"
-          :src="data?.image"
+          :src="item?.image"
           sizes="sm:100vw"
           format="webp"
           densities="x1"
@@ -36,15 +43,7 @@ const { data } = await useSanityQuery<Author>(query);
         />
       </div>
       <p class="text-justify">
-        Hi there!
-        <br />
-        <br />
-        I am Talha. I am a frontend developer from Germany. I share here some of
-        my creative projects in various mediums, mostly analogue photography,
-        software projects, and free-verse poetry. I am also an avid cyclist. So,
-        you might see from time to time some content on bikes and bike tours. I
-        hope you will find some pleasure visiting this site. Let me know what
-        you think. Cheers!
+        <PortableText :value="post.body" />
       </p>
     </div>
   </div>
