@@ -27,6 +27,7 @@
     "better-sqlite3": "^11.10.0",
     "eslint": "^9.23.0",
     "groq": "^3.81.0",
+    "netlify-cli": "^22.1.6",
     "nuxt": "^3.16.1",
     "nuxt-blurhash": "^0.0.6",
     "nuxt-viewport": "^2.3.1",
