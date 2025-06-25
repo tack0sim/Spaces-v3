@@ -75,7 +75,7 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
         densities="x1"
         loading="lazy"
         :placeholder="(item as Gallery).lqip"
-        class="w-[400] h-[450] rounded-lg object-cover mx-auto"
+        class="w-[200] h-[250] rounded-lg object-cover mx-auto"
       />
     </template>
   </UCarousel>
