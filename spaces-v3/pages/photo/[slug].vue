@@ -32,8 +32,8 @@ const { data: images } = useSanityQuery<Gallery>(query, {
         class="w-full h-auto object-contain"
       />
     </NuxtLink>
-    <p>Title: {{ images?.title }}</p>
-    <p>Date: {{ images?.date }}</p>
-    <p>Categories: {{ images?.categories?.join(", ") }}</p>
+    <p>title: {{ images?.title }}</p>
+    <p>date: {{ images?.date }}</p>
+    <p>categories: {{ images?.categories?.join(", ") }}</p>
   </div>
 </template>

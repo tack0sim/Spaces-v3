@@ -11,7 +11,7 @@ import { Icon } from "@iconify/vue";
     >
       <div class="flex flex-col justify-start gap-y-2 mx-auto">
         <div>
-          <p class="light:text-white">© 2025 Talha Minhas</p>
+          <p class="light:text-white">© 2025 talha minhas</p>
         </div>
         <div class="flex items-center gap-x-1">
           <NuxtLink
@@ -20,7 +20,7 @@ import { Icon } from "@iconify/vue";
             class="flex items-center gap-x-2"
           >
             <Icon icon="mdi:instagram" color="#fff" />
-            <p class="light:text-white">Follow my work on Instagram</p>
+            <p class="light:text-white">follow my work on instagram</p>
           </NuxtLink>
         </div>
       </div>
@@ -31,14 +31,14 @@ import { Icon } from "@iconify/vue";
       class="bg-gray-800 h-32 px-4 py-6 mt-8 bottom-0"
     >
       <div class="flex justify-between max-w-[1440px] mx-auto">
-        <p class="light:text-white">© 2025 Talha Minhas</p>
+        <p class="light:text-white">© 2025 talha minhas</p>
         <NuxtLink
           to="https://www.instagram.com/talha_mnhs/"
           target="_blank"
           class="flex items-center gap-x-2"
         >
           <Icon icon="mdi:instagram" color="#fff" />
-          <p class="light:text-white">Follow my work on Instagram</p>
+          <p class="light:text-white">follow my work on instagram</p>
         </NuxtLink>
       </div>
     </footer>

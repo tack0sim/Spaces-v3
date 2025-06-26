@@ -81,7 +81,7 @@ const isDark = computed({
       <div class="flex items-center gap-4">
         <!-- <Icon icon="mdi-light:camera" width="33" height="33" color="black" /> -->
         <NuxtLink to="/" class="text-2xl font-bold">
-          <h2>Spaces</h2>
+          <h2>spaces</h2>
         </NuxtLink>
         <!-- Desktop menu -->
         <UNavigationMenu

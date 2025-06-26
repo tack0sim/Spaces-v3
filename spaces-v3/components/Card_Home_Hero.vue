@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PortableText } from "@portabletext/vue";
 
-const query = groq`*[_type == "gallery" && title == "Bus stop"][0]{
+const query = groq`*[_type == "gallery" && title == "bus stop"][0]{
   title,
   "mainImage": mainImage.asset->url,
   "lqip": mainImage.asset->metadata.lqip
@@ -30,7 +30,7 @@ const { data: hero } = await useSanityQuery<Hero>(heroQuery);
       <div
         class="flex flex-col items-start absolute right-2 sm:right-10 md:right-10 bottom-5 sm:bottom-10 md:bottom-10 z-10"
       >
-        <p class="text-white">Welcome to my portfolio!</p>
+        <p class="text-white">welcome to my portfolio!</p>
         <UButton
           label="gallery"
           to="/gallery"
