@@ -18,7 +18,7 @@ const { data: posts } = await useSanityQuery<Posts[]>(query);
   <div
     class="prose bg-gray-100 dark:bg-[#bababc] rounded-2xl p-2 mr-2 ml-2 w-fit prose-a:no-underline prose-p:mb-[0.25rem]"
   >
-    <h2 class="mb-0">Latest Posts</h2>
+    <h2 class="mb-0">latest posts</h2>
     <article v-for="post in posts" :key="post._id" class="mb-4">
       <h3 class="mt-0 mb-0">{{ post.title }}</h3>
       <PortableText :value="post.blurb" />

@@ -5,12 +5,12 @@ import type { DropdownMenuItem, NavigationMenuItem } from "@nuxt/ui";
 const items = ref<NavigationMenuItem[][]>([
   [
     {
-      label: "Gallery",
+      label: "gallery",
       icon: "i-lucide-image",
       to: "/gallery",
     },
     {
-      label: "Blog",
+      label: "blog",
       icon: "i-lucide-text",
       to: "/blogs",
     },
@@ -20,7 +20,7 @@ const items = ref<NavigationMenuItem[][]>([
     //   to: "/artwork",
     // },
     {
-      label: "About",
+      label: "about",
       icon: "i-lucide-user",
       to: "/about",
     },
@@ -33,13 +33,13 @@ const hamburgerItems = ref<DropdownMenuItem[][]>([
       link: "Gallery",
       icon: "i-lucide-image",
       to: "/gallery",
-      label: "Gallery",
+      label: "gallery",
     },
     {
       link: "Blog",
       icon: "i-lucide-text",
       to: "/blogs",
-      label: "Blog",
+      label: "blog",
     },
     // {
     //   link: "Artworks",
@@ -51,7 +51,7 @@ const hamburgerItems = ref<DropdownMenuItem[][]>([
       link: "About",
       icon: "i-lucide-user",
       to: "/about",
-      label: "About",
+      label: "about",
     },
   ],
 ]);

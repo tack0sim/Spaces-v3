@@ -1,11 +1,19 @@
 <script setup lang="ts">
+import { PortableText } from "@portabletext/vue";
+
 const query = groq`*[_type == "gallery" && title == "Bus stop"][0]{
   title,
   "mainImage": mainImage.asset->url,
   "lqip": mainImage.asset->metadata.lqip
 }`;
 
+const heroQuery = groq`*[_type == "hero"][0]{
+  heroHead,  
+  heroText
+}`;
+
 const { data } = await useSanityQuery<Gallery>(query);
+const { data: hero } = await useSanityQuery<Hero>(heroQuery);
 </script>
 
 <template>
@@ -35,14 +43,8 @@ const { data } = await useSanityQuery<Gallery>(query);
     </div>
     <div>
       <div class="self-end mt-4 ml-2">
-        <h2 class="text-2xl font-bold mb-2">Welcome to the Spaces Project</h2>
-        <p>
-          You have just landed at the spaces project homepage. This site is the
-          brainchild and manifestation of years of personal creative and
-          exploratory projects. It is my intention to make navigating through
-          this space(s) an immersive, inspiring and thought-provoking
-          experience. Therefore, I am thrilled to hear about your feedback.
-        </p>
+        <h2 class="text-2xl font-bold mb-2">{{ hero?.heroHead }}</h2>
+        <PortableText :value="hero?.heroText" />
         <UButton
           label="tell me more"
           to="/about"

@@ -57,4 +57,9 @@ declare global {
   interface About {
     body: PortableTextBlock[];
   }
+
+  interface Hero {
+    heroHead: string;
+    heroText: PortableTextBlock[];
+  }
 }

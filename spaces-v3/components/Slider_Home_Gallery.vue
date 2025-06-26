@@ -22,7 +22,7 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
     v-if="$viewport.isLessOrEquals('mobileWide')"
     class="prose dark:prose-invert"
   >
-    <h2 class="mb-4 ml-2">Featured works</h2>
+    <h2 class="mb-4 ml-2">featured works</h2>
   </div>
   <UCarousel
     v-if="$viewport.isLessOrEquals('mobileWide')"
@@ -52,7 +52,7 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
     v-if="$viewport.isGreaterThan('mobileWide')"
     class="prose dark:prose-invert"
   >
-    <h2 class="mb-4 ml-2">Featured works</h2>
+    <h2 class="mb-4 ml-2">featured works</h2>
   </div>
   <UCarousel
     v-if="$viewport.isGreaterThan('mobileWide')"
