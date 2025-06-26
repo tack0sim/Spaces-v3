@@ -75,12 +75,12 @@ const isDark = computed({
 </script>
 
 <template>
-  <nav class="w-full bg-white py-4 px-6 gap-4 mb-4">
+  <nav class="w-full py-4 px-6 gap-4 mb-4">
     <div class="max-w-[1440px] mx-auto flex items-center justify-between">
       <!-- Icon, title, menu -->
       <div class="flex items-center gap-4">
         <!-- <Icon icon="mdi-light:camera" width="33" height="33" color="black" /> -->
-        <NuxtLink to="/" class="text-2xl font-bold text-black">
+        <NuxtLink to="/" class="text-2xl font-bold">
           <h2>Spaces</h2>
         </NuxtLink>
         <!-- Desktop menu -->

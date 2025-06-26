@@ -14,10 +14,14 @@ import { Icon } from "@iconify/vue";
           <p class="light:text-white">© 2025 Talha Minhas</p>
         </div>
         <div class="flex items-center gap-x-1">
-          <NuxtLink to="https://www.instagram.com/talha_mnhs/">
+          <NuxtLink
+            to="https://www.instagram.com/talha_mnhs/"
+            target="_blank"
+            class="flex items-center gap-x-2"
+          >
             <Icon icon="mdi:instagram" color="#fff" />
+            <p class="light:text-white">Follow my work on Instagram</p>
           </NuxtLink>
-          <p class="light:text-white">Follow my work on Instagram</p>
         </div>
       </div>
     </footer>

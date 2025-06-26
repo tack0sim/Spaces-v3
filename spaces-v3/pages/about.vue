@@ -18,7 +18,6 @@ const { data: post } = await useSanityQuery<About>(queryAbout);
   <div
     class="prose dark:prose-invert ml-6 max-md:w-[90vw] max-md:mx-auto min-md:flex min-md:flex-col min-md:justify-start"
   >
-    <h2>About me</h2>
     <div
       class="min-md:flex flex-row-reverse min-md:gap-x-4 justify-between min-md:w-[90vw]"
     >

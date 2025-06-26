@@ -7,6 +7,6 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <NuxtPage />
+    <NuxtPage class="min-h-screen" />
   </NuxtLayout>
 </template>

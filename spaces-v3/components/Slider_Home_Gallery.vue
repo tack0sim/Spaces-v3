@@ -6,7 +6,7 @@ defineProps<{
   nextIcon?: string;
 }>();
 
-const query = groq`*[_type == "gallery"]{
+const query = groq`*[_type == "gallery" && title != "Bus stop"][0...7]{
     _id,
   "slug": slug.current,
   "mainImage": mainImage.asset->url,
@@ -40,8 +40,7 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
         :src="(item as Gallery).mainImage"
         format="webp"
         densities="x1"
-        width="300"
-        height="300"
+        sizes="xs:100vw"
         loading="lazy"
         :placeholder="(item as Gallery).lqip"
         class="w-[250px] h-[250px] object-cover rounded-lg mx-auto"
@@ -69,13 +68,12 @@ const { data: images } = await useSanityQuery<Gallery[]>(query);
     <template #default="{ item }">
       <NuxtImg
         :src="(item as Gallery).mainImage"
-        width="400"
-        height="450"
+        sizes="md:100vw"
         format="webp"
         densities="x1"
         loading="lazy"
         :placeholder="(item as Gallery).lqip"
-        class="w-[200] h-[250] rounded-lg object-cover mx-auto"
+        class="w-[250px] h-[250px] rounded-lg object-cover mx-auto"
       />
     </template>
   </UCarousel>

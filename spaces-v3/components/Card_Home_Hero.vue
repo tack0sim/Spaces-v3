@@ -1,12 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const query = groq`*[_type == "gallery" && title == "Bus stop"][0]{
+  title,
+  "mainImage": mainImage.asset->url,
+  "lqip": mainImage.asset->metadata.lqip
+}`;
+
+const { data } = await useSanityQuery<Gallery>(query);
+</script>
 
 <template>
   <div class="flex flex-col justify-center items-start mb-4">
     <div class="relative bg-[#c7c7c7] sm:rounded-r-2xl">
       <NuxtImg
-        src="/images/19A.jpeg"
+        :src="data?.mainImage"
         format="webp"
-        densities="x1"
+        loading="lazy"
+        :placeholder="data?.lqip"
+        densities="x1 x2"
         class="opacity-65 w-screen h-[300px] object-cover md:object-[35%_70%] sm:rounded-r-2xl"
       />
       <div

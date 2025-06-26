@@ -35,7 +35,7 @@ const { data: posts } = await useSanityQuery<Posts[]>(query);
           loading="lazy"
           densities="x1"
           format="webp"
-          class="w-screen h-[200px] min-md: object-cover rounded-r-2xl"
+          class="w-screen h-[250px] min-md: object-cover rounded-r-2xl"
         />
       </NuxtLink>
       <PortableText :value="post.body" />

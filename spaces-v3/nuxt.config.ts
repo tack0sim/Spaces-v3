@@ -30,7 +30,14 @@ export default defineNuxtConfig({
     "@nuxtjs/sanity",
     "nuxt-viewport",
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
   ],
+
+  colorMode: {
+    preference: "system",
+    fallback: "light",
+    storage: "sessionStorage",
+  },
 
   viewport: {
     breakpoints: {

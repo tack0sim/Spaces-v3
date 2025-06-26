@@ -2,3 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @import "@nuxt/ui";
+
+html.dark body {
+  @apply bg-[#0f0f0f];
+}
