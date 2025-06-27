@@ -6,7 +6,7 @@ defineProps<{
   nextIcon?: string;
 }>();
 
-const query = groq`*[_type == "gallery" && title != "Bus stop"][0...7]{
+const query = groq`*[_type == "gallery" && title != "bus stop"][0...7]{
     _id,
   "slug": slug.current,
   "mainImage": mainImage.asset->url,
