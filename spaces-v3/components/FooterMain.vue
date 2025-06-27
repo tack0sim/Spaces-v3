@@ -28,7 +28,7 @@ import { Icon } from "@iconify/vue";
     <!-- Desktop view  -->
     <footer
       v-if="$viewport.isGreaterOrEquals('tablet')"
-      class="bg-gray-800 h-32 px-4 py-6 mt-8 bottom-0"
+      class="bg-gray-800 h-32 px-4 py-6 mt-8 bottom-0 min-2xl:max-w-[1440px] min-2xl:mx-auto"
     >
       <div class="flex justify-between max-w-[1440px] mx-auto">
         <p class="light:text-white">© 2025 talha minhas</p>

@@ -20,7 +20,7 @@ const { data: images } = useSanityQuery<Gallery>(query, {
 </script>
 
 <template>
-  <div class="flex flex-col grow max-w-[50vw] max-md:max-w-[95vw] mx-auto">
+  <div class="flex flex-col grow max-w-[65vw] max-md:max-w-[95vw] mx-auto">
     <NuxtLink :to="images?.mainImage">
       <NuxtImg
         :src="images?.mainImage"

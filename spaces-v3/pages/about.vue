@@ -16,10 +16,10 @@ const { data: post } = await useSanityQuery<About>(queryAbout);
 
 <template>
   <div
-    class="prose dark:prose-invert ml-6 max-md:w-[90vw] max-md:mx-auto min-md:flex min-md:flex-col min-md:justify-start"
+    class="prose dark:prose-invert ml-6 max-md:w-[90vw] min-md:max-w-[75vw] min-md:mx-auto max-md:mx-auto min-md:flex min-md:flex-col min-md:justify-start h-fit"
   >
     <div
-      class="min-md:flex flex-row-reverse min-md:gap-x-4 justify-between min-md:w-[90vw]"
+      class="min-md:flex flex-row-reverse min-md:gap-x-4 justify-between min-md:w-[75vw]"
     >
       <div v-if="$viewport.isLessThan('tablet')" class="relative w-full">
         <NuxtImg
