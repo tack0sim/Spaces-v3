@@ -1,9 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
     <NavMain />
-    <slot />
+    <main class="flex-1">
+      <NuxtPage />
+    </main>
     <FooterMain />
   </div>
 </template>

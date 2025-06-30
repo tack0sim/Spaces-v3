@@ -14,7 +14,7 @@ const query = groq`*[_type == "gallery" && title != "bus stop"][0...7]{
   "blurhash": mainImage.asset->metadata.blurHash
 }`;
 
-const { data: images } = await useSanityQuery<Gallery[]>(query);
+const { data: images } = await useLazySanityQuery<Gallery[]>(query);
 </script>
 
 <template>

@@ -12,12 +12,12 @@ definePageMeta({
       class="flex flex-col justify-center md:flex-row md:justify-evenly items-start gap-4 mb-8 md:mr-2"
     >
       <div class="md:basis-3/5 w-full">
-        <CardHomeHero />
+        <CardHomeHero hydrate-on-idle />
       </div>
       <div class="md:basis-2/5 w-full">
         <CardHomeBlog />
       </div>
     </div>
-    <SliderHomeGallery />
+    <LazySliderHomeGallery hydrate-on-visible />
   </div>
 </template>

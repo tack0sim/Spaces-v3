@@ -11,7 +11,7 @@ const query = groq`*[_type == "post"] | order(publishedAt desc)[0..2]{
     "mainImage": mainImage.asset->url
     }`;
 
-const { data: posts } = await useSanityQuery<Posts[]>(query);
+const { data: posts } = await useLazySanityQuery<Posts[]>(query);
 </script>
 
 <template>

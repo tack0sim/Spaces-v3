@@ -13,7 +13,7 @@ const heroQuery = groq`*[_type == "hero"][0]{
 }`;
 
 const { data } = await useSanityQuery<Gallery>(query);
-const { data: hero } = await useSanityQuery<Hero>(heroQuery);
+const { data: hero } = await useLazySanityQuery<Hero>(heroQuery);
 </script>
 
 <template>
