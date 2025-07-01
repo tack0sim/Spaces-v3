@@ -3,6 +3,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  ssr: true,
   runtimeConfig: {
     API_URL: "https://api.artic.edu/api/v1/artworks",
     public: {
