@@ -1,29 +1,36 @@
 <script setup lang="ts">
 import { PortableText } from "@portabletext/vue";
 
-const query = groq`*[_type == "gallery" && title == "bus stop"][0]{
-  title,
-  "mainImage": mainImage.asset->url,
-  "lqip": mainImage.asset->metadata.lqip
+const query = groq`
+{
+  "gallery": *[_type == "gallery" && title == "bus stop"][0]{
+    title,
+    "mainImage": mainImage.asset->url,
+    "lqip": mainImage.asset->metadata.lqip
+  },
+  "hero": *[_type == "hero"][0]{
+    heroHead,  
+    heroText
+  }
 }`;
 
-const heroQuery = groq`*[_type == "hero"][0]{
-  heroHead,  
-  heroText
-}`;
+const { data } = await useLazySanityQuery<{
+  gallery: Gallery;
+  hero: Hero;
+}>(query);
 
-const { data } = await useSanityQuery<Gallery>(query);
-const { data: hero } = await useLazySanityQuery<Hero>(heroQuery);
+const gallery = computed(() => data?.value?.gallery);
+const hero = computed(() => data?.value?.hero);
 </script>
 
 <template>
   <div class="flex flex-col justify-center items-start mb-4">
     <div class="relative bg-[#c7c7c7] sm:rounded-r-2xl">
       <NuxtImg
-        :src="data?.mainImage"
+        :src="gallery?.mainImage"
         format="webp"
         loading="lazy"
-        :placeholder="data?.lqip"
+        :placeholder="gallery?.lqip"
         densities="x1 x2"
         class="opacity-65 w-screen h-[300px] object-cover md:object-[35%_70%] sm:rounded-r-2xl"
       />
