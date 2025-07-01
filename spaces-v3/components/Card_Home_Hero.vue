@@ -14,13 +14,22 @@ const query = groq`
   }
 }`;
 
-const { data } = await useLazySanityQuery<{
+const cached = useState<{
   gallery: Gallery;
   hero: Hero;
-}>(query);
+} | null>("hero-galler-data", () => null);
 
-const gallery = computed(() => data?.value?.gallery);
-const hero = computed(() => data?.value?.hero);
+if (!cached.value) {
+  const { data } = await useSanityQuery<{
+    gallery: Gallery;
+    hero: Hero;
+  }>(query);
+
+  cached.value = data.value;
+}
+
+const gallery = computed(() => cached?.value?.gallery);
+const hero = computed(() => cached?.value?.hero);
 </script>
 
 <template>
