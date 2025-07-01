@@ -27,6 +27,7 @@ const { data: hero } = await useLazySanityQuery<Hero>(heroQuery);
         densities="x1 x2"
         class="opacity-65 w-screen h-[300px] object-cover md:object-[35%_70%] sm:rounded-r-2xl"
       />
+
       <div
         class="flex flex-col items-start absolute right-2 sm:right-10 md:right-10 bottom-5 sm:bottom-10 md:bottom-10 z-10"
       >

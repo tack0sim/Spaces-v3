@@ -2,7 +2,7 @@
 import { CardHomeHero } from "#components";
 
 definePageMeta({
-  title: "Spaces",
+  prerender: true,
 });
 </script>
 
