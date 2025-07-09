@@ -58,9 +58,7 @@ const hamburgerItems = ref<DropdownMenuItem[][]>([
 
 const viewport = useViewport();
 
-watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
-  console.log("Breakpoint updated:", oldBreakpoint, "to", newBreakpoint);
-});
+watch(viewport.breakpoint, () => {});
 
 const colorMode = useColorMode();
 

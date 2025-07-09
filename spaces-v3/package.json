@@ -39,7 +39,6 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.52",
     "@iconify/vue": "^5.0.0",
     "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
     "@tailwindcss/typography": "^0.5.16",
