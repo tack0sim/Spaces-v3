@@ -8,8 +8,8 @@
     <p>
       I appreciate your interest in my website. Protecting your personal data is
       very important to me. Below, i will inform you in accordance with Article
-      13 of the General Data Protection Regulation (GDPR) about the processing
-      of personal data when using this website.
+      13 of the General Data Protection Regulation (GDPR) of the European Union
+      about the processing of personal data when using this website.
     </p>
     <h3>1. Controller</h3>
     <p>

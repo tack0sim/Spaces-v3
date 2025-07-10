@@ -45,9 +45,9 @@ const { data: post } = await useSanityQuery<About>(queryAbout);
         <PortableText :value="post?.body" />
       </p>
     </div>
-    <!-- <hr /> -->
+    <hr />
     <!-- contact form -->
-    <!-- <div>
+    <div>
       <h2 class="mt-1">let's talk:</h2>
       <form class="">
         <div class="flex flex-col justify-start items-start">
@@ -81,6 +81,6 @@ const { data: post } = await useSanityQuery<About>(queryAbout);
           <UButton label="submit" size="md" color="neutral" variant="subtle" />
         </div>
       </form>
-    </div> -->
+    </div>
   </div>
 </template>
