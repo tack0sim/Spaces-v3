@@ -24,6 +24,11 @@ import { Icon } from "@iconify/vue";
           </NuxtLink>
         </div>
       </div>
+      <div
+        class="flex justify-start items-center max-w-[1440px] mt-7 text-white pl-1"
+      >
+        <NuxtLink to="/privacy">privacy policy</NuxtLink>
+      </div>
     </footer>
     <!-- Desktop view  -->
     <footer
@@ -40,6 +45,11 @@ import { Icon } from "@iconify/vue";
           <Icon icon="mdi:instagram" color="#fff" />
           <p class="light:text-white">follow my work on instagram</p>
         </NuxtLink>
+      </div>
+      <div
+        class="flex justify-start items-center max-w-[1440px] mt-12 text-white pl-1"
+      >
+        <NuxtLink to="/privacy">privacy policy</NuxtLink>
       </div>
     </footer>
   </div>
