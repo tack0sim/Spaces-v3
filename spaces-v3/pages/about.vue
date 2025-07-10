@@ -42,8 +42,45 @@ const { data: post } = await useSanityQuery<About>(queryAbout);
         />
       </div>
       <p class="text-justify">
-        <PortableText :value="post.body" />
+        <PortableText :value="post?.body" />
       </p>
     </div>
+    <!-- <hr /> -->
+    <!-- contact form -->
+    <!-- <div>
+      <h2 class="mt-1">let's talk:</h2>
+      <form class="">
+        <div class="flex flex-col justify-start items-start">
+          <div class="my-1">
+            <label for="name">name:</label>
+            <input
+              id="name"
+              type="text"
+              class="rounded-sm max-sm:w-[60vw] max-md:w-[60vw] md:w-[25vw] ml-11 p-1 bg-[#0f0f0f]/10"
+            />
+          </div>
+          <div class="my-1">
+            <label for="name">email:</label>
+            <input
+              id="email"
+              type="email"
+              class="rounded-sm max-sm:w-[60vw] max-md:w-[60vw] md:w-[25vw] ml-[45px] p-1 bg-[#0f0f0f]/10"
+            />
+          </div>
+          <div class="flex justify-start items-start my-1">
+            <label for="name">message:</label>
+            <textarea
+              id="message"
+              type="textarea"
+              rows="5"
+              class="rounded-sm max-sm:w-[60vw] max-md:w-[60vw] md:w-[25vw] ml-4.5 p-1 bg-[#0f0f0f]/10"
+            />
+          </div>
+        </div>
+        <div class="max-sm:ml-[45%] max-md:ml-[40%] md:ml-[22%] mt-3">
+          <UButton label="submit" size="md" color="neutral" variant="subtle" />
+        </div>
+      </form>
+    </div> -->
   </div>
 </template>
